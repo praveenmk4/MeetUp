@@ -15,3 +15,13 @@ exports.postInFormation = function(req, res) {
             res.status(500).send(error)
         });
 };
+exports.usersInformation = function(req, res) {
+    axios.get(`${API}/users`)
+        .then(users => {
+            res.status(200).json(users.data);
+
+        })
+        .catch(error => {
+            res.status(500).send(error)
+        });
+}

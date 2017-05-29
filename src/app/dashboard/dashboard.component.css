@@ -6,3 +6,7 @@
     background-image: url('../../assets/images/user.jpg');
     background-size: cover;
 }
+
+#qtnRow {
+    margin: 2%;
+}

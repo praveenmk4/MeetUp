@@ -19,7 +19,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
-
+import{ParticipantsService} from './participants.service';
 const ROUTES = [
   {
     path: '',
@@ -64,7 +64,7 @@ const ROUTES = [
      BrowserAnimationsModule
       ],
 
-  providers: [],
+  providers: [ParticipantsService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

@@ -7,4 +7,7 @@ router.route('/catalogues')
 // .post(catalogues.apiPOST);
 router.route('/sendHome')
     .get(api.sendHome);
+router.route('/participants')
+    .get(api.usersInformation);
+
 module.exports = router;

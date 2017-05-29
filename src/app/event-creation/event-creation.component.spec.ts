@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextQtnsComponent } from './text-qtns.component';
+import { EventCreationComponent } from './event-creation.component';
 
-describe('TextQtnsComponent', () => {
-  let component: TextQtnsComponent;
-  let fixture: ComponentFixture<TextQtnsComponent>;
+describe('EventCreationComponent', () => {
+  let component: EventCreationComponent;
+  let fixture: ComponentFixture<EventCreationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TextQtnsComponent ]
+      declarations: [ EventCreationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TextQtnsComponent);
+    fixture = TestBed.createComponent(EventCreationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

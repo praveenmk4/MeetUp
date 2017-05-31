@@ -20,29 +20,41 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
 import{ParticipantsService} from './participants.service';
+import { LoginComponent } from './login/login.component';
+import { LandingComponent } from './landing/landing.component';
 const ROUTES = [
-  {
+   {
     path: '',
-    redirectTo: 'app',
-    pathMatch: 'full'
+    component: LandingComponent,
+  
   },
   
-  {
-    path:'home',
-    component: HomeComponent
+
+ 
+  
+  
+    {path:'home',
+    component: HomeComponent,
+     children: [
+              {
+                path:'dashboard',
+                component:DashboardComponent
+             },{
+                path:'settings',
+                component:SettingsComponent
+             },
+              {
+                path:"eventCreation",
+                component:EventCreationComponent
+              },
+    ]
   },
+ 
   {
-    path:'dashboard',
-    component:DashboardComponent
+    path:"login",
+    component:LoginComponent
   },
-  {
-    path:'settings',
-    component:SettingsComponent
-  },
-  {
-    path:"eventCreation",
-    component:EventCreationComponent
-  }
+    
 ];
 
 @NgModule({
@@ -51,7 +63,9 @@ const ROUTES = [
     HomeComponent,
     DashboardComponent,
     SettingsComponent,
-    EventCreationComponent  
+    EventCreationComponent,
+    LoginComponent,
+    LandingComponent  
     
   ],
   imports: [

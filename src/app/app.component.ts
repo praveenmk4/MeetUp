@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
-
+import{HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,10 @@ import {Router, RouterLink} from '@angular/router';
 
 })
 export class AppComponent {
-  
+  constructor(
+     private router: Router
+    ) {}
+
+
+
 }

@@ -1,4 +1,4 @@
-<div class="container-fuild">
+<div class="container-fuild" style=" max-width:1250px">
 
     <div class="row" id="qtnRow">
         <div class="col-md-6">
@@ -21,17 +21,19 @@
             </md-card>
 
         </div>
+
         <div class="col-md-6">
+            <div class="container-fuild">
+                <md-list>
+                    <h3 md-subheader>Participants</h3>
+                    <md-list-item *ngFor="let user of users">
+                        <span class="glyphicon glyphicon-user"></span>
 
-            <md-list>
-                <h3 md-subheader>Participants</h3>
-                <md-list-item *ngFor="let user of users">
-                    <span class="glyphicon glyphicon-user"></span>
+                        <p md-line> {{user.name}} </p>
+                    </md-list-item>
 
-                    <p md-line> {{user.name}} </p>
-                </md-list-item>
-
-            </md-list>
+                </md-list>
+            </div>
         </div>
 
 

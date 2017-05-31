@@ -1,16 +1,9 @@
-.example-container {
-    width: 500px;
-    height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+.navbar-brand {
+    padding: 0px;
 }
 
-.example-sidenav-content {
-    display: flex;
+.navbar-brand>img {
     height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.example-sidenav {
-    padding: 20px;
+    padding: 0px;
+    width: 119%;
 }

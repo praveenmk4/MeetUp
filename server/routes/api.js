@@ -9,5 +9,6 @@ router.route('/sendHome')
     .get(api.sendHome);
 router.route('/participants')
     .get(api.usersInformation);
-
+router.route('/test')
+    .get(api.test);
 module.exports = router;

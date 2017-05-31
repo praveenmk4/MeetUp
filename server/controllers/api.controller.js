@@ -25,3 +25,6 @@ exports.usersInformation = function(req, res) {
             res.status(500).send(error)
         });
 }
+exports.test = function(req,res){
+	res.send('this is a test urlS');
+}

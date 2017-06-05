@@ -36,6 +36,8 @@ const ROUTES = [
     {path:'home',
     component: HomeComponent,
      children: [
+        { path: '',
+                component: DashboardComponent},
               {
                 path:'dashboard',
                 component:DashboardComponent
@@ -46,7 +48,8 @@ const ROUTES = [
               {
                 path:"eventCreation",
                 component:EventCreationComponent
-              },
+              }
+            
     ]
   },
  

@@ -10,7 +10,7 @@ const config = require('./config');
 // Get our API routes
 const api = require('./server/routes/api');
 const db = require('./server/routes/db');
-
+const group = require('./server/routes/groups');
 const app = express();
 
 // Parsers for POST data
@@ -22,14 +22,15 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 const routes = express.Router();
 
-routes.get('/test', function (req, res) {
-  res.send('Our Sample API is up...');
+routes.get('/test', function(req, res) {
+    res.send('Our Sample API is up...');
 });
 
 
 // Set our api routes
 app.use('/api', api);
 app.use('/db', db);
+app.use('/group', group);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

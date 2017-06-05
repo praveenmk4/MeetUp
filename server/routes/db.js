@@ -6,7 +6,9 @@ var db = require('../controllers/db.controller');
 router.route('/test')
     .get(db.test);
 router.route('/register')
-	.post(db.register);
+    .post(db.register);
 router.route('/login')
-	.post(db.login);
+    .post(db.login);
+router.route('/userList')
+    .get(db.getUserByMobileNumber);
 module.exports = router;

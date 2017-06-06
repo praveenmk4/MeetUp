@@ -36,7 +36,7 @@ exports.register = function(req, res) {
         } else {
             res.status(200).json({ success: true, message: 'User had been registered successfully' });
         }
-        db.connection.close()
+        db.disconnect();
     })
 
 };
@@ -70,13 +70,13 @@ exports.login = function(req, res) {
                 });
             }
         }
-        db.connection.close()
+        db.disconnect();
     });
 };
 exports.getUserByMobileNumber = function(req, res) {
     var phones = req.param('phone');
     console.log(phones);
-    user.findOne({
+    user.find({
             phone: phones
         },
 
@@ -89,5 +89,5 @@ exports.getUserByMobileNumber = function(req, res) {
                 // console.log(result);
             }
         });
-    db.connection.close()
+    db.disconnect();
 };

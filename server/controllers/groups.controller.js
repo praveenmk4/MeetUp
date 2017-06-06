@@ -72,7 +72,7 @@ exports.updateFieldInGroup = function(req, res) {
         if (err) {
             res.json({ success: false, message: 'Group Not found' });
         } else {
-            console.log(result);
+            //  console.log(result);
             res.status(200).json({ success: true, message: 'Group had been updated successfully' });
             db.disconnect();
         }
@@ -80,7 +80,8 @@ exports.updateFieldInGroup = function(req, res) {
 
 };
 exports.updateGroup = function(req, res) {
-    var phones = req.body.phones;
+    //var phones = req.body.phones;
+
     var updateInfo = {
         groupName: req.body.groupName,
         groupOwner: req.body.adminName,
@@ -91,13 +92,30 @@ exports.updateGroup = function(req, res) {
         updateInfo.members.push(req.body.member[i]);
     }
 
-    console.log(updateInfo);
-    group.findOneAndUpdate({ phone: phones }, { $set: { updateInfo } }, function(err, result) {
+    // console.log(updateInfo);
+    group.findOneAndUpdate({ groupName: req.body.groupName }, { '$set': updateInfo }, function(err, result) {
         if (err) {
             res.json({ success: false, message: 'Group Not found' });
+        } else if (result == null) {
+            res.json({ success: false, message: 'Group Not found' });
         } else {
+            console.log(result);
             res.status(200).json({ success: true, message: 'Group had been updated successfully' });
-            db.connection.close();
+            db.disconnect();
         }
     });
-}
+};
+
+exports.listOfGroups = function(req, res) {
+    var phone = req.param('phone');
+
+    group.find({ phone: phone }, function(err, result) {
+        if (err) {
+            res.json({ success: false, message: 'No groups on this account' });
+        } else {
+            res.send(result);
+            db.disconnect();
+        }
+    });
+};
+/*exports.deleteGroupMe*/

@@ -9,4 +9,6 @@ router.route('/updateGroup')
     .post(groups.updateGroup);
 router.route('/updateField')
     .post(groups.updateFieldInGroup);
+router.route('/groupList')
+    .get(groups.listOfGroups);
 module.exports = router;

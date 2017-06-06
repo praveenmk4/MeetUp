@@ -22,6 +22,7 @@ import { EventCreationComponent } from './event-creation/event-creation.componen
 import{ParticipantsService} from './participants.service';
 import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
+import { GroupsComponent } from './groups/groups.component';
 const ROUTES = [
    {
     path: '',
@@ -48,7 +49,12 @@ const ROUTES = [
               {
                 path:"eventCreation",
                 component:EventCreationComponent
+              },
+              {
+                path:"groupCreation",
+                component:GroupsComponent
               }
+              
             
     ]
   },
@@ -68,7 +74,8 @@ const ROUTES = [
     SettingsComponent,
     EventCreationComponent,
     LoginComponent,
-    LandingComponent  
+    LandingComponent,
+    GroupsComponent  
     
   ],
   imports: [

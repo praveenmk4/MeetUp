@@ -1,18 +1,20 @@
 body{background: #eee url(http://subtlepatterns.com/patterns/sativa.png);}
+html,body{
+    position: relative;
+    height: 100%;
+	
+}
 
 	*{
 		font-family:Segoe UI;
 		color:#fff;
 	}
 
-html,body{
-    position: relative;
-    height: 100%;
-}
 .container{
 	margin-top:5%;
 }
-.login-container{
+
+.register-container{
     position: relative;
     width: 300px;
     margin: 0 auto;
@@ -49,7 +51,7 @@ html,body{
 }
 
 
-.login-container::before,.login-container::after{
+.register-container::before,.register-container::after{
     content: "";
     position: absolute;
     width: 100%;height: 100%;
@@ -63,7 +65,7 @@ html,body{
 
 }
 
-.login-container::after{
+.register-container::after{
     top: 5px;
     z-index: -2;
     -webkit-transform: rotateZ(-2deg);
@@ -96,17 +98,31 @@ html,body{
     background: #eee;
 }
 
+/*
 .form-box input[type="text"]{
     border-radius: 5px 5px 0 0;
     text-transform: lowercase;
 }
+*/
 
+#firstname {
+    border-radius: 5px 5px 0 0;
+    text-transform: lowercase;
+}
+
+#phone{
+	border-radius: 0 0 5px 5px;
+    border-top: 0;
+}
+
+/*
 .form-box input[type="password"]{
     border-radius: 0 0 5px 5px;
     border-top: 0;
 }
+*/
 
-.form-box button.login{
+.form-box button.register{
     margin-top:15px;
     padding: 10px 20px;
 }
@@ -169,3 +185,6 @@ html,body{
   border-left: 5px solid #a94442; /* red */
 }
 
+h3{
+	padding-bottom:10px;
+}

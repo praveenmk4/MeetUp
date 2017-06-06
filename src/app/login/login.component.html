@@ -1,6 +1,24 @@
-<form class="example-form">
-    <input type="email" mdInput placeholder="User Name" value="">
-    <input type="password" mdInput placeholder="Password">
+<div class="container">
+<h2 class="heading">MeetUp</h2>
+				<div class="login-container">
+					<div id="output"></div>
+					<div class="avatar"></div>
+					<div class="form-box">
+						<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+							<input name="username" id="username" type="text" placeholder="username" required [(ngModel)]="model.username" #username="ngModel">
+							<div [hidden]="username.valid || username.pristine" class="alert alert-danger">username is required</div>
+							
+							<input type="password" placeholder="password" name="password" id="password" [(ngModel)]="model.password" #password="ngModel">
+							<div [hidden]="password.valid || password.pristine" class="alert alert-danger">password is required</div>
+							<br/>
+							<button type="submit" class="btn submit-btn" [disabled]="!loginForm.form.valid">Submit</button>
+						</form>
+					</div>
+				</div>
+          
 
-    <button md-button (click)="btnSignin();">Sign In</button>
-</form>
+            <div class="footer">
+              <p>Love &copy; MeetUp Team.</p>
+            </div>
+</div>
+

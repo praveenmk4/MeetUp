@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { GroupsComponent } from './groups/groups.component';
 import { RegisterComponent } from './register/register.component';
+import { CreateGroupComponent } from './create-group/create-group.component';
 const ROUTES = [
    {
     path: '',
@@ -52,8 +53,12 @@ const ROUTES = [
                 component:EventCreationComponent
               },
               {
-                path:"groupCreation",
+                path:"groups",
                 component:GroupsComponent
+              },
+              {
+                path:"groupCreation",
+                component:CreateGroupComponent
               }
               
             
@@ -82,7 +87,8 @@ const ROUTES = [
     LoginComponent,
     LandingComponent,
     GroupsComponent,
-    RegisterComponent  
+    RegisterComponent,
+    CreateGroupComponent  
     
   ],
   imports: [

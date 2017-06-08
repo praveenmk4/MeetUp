@@ -1,0 +1,83 @@
+<!--header content goes here-->
+<div class="panel" id="grpPanel">
+    <div class="panel-heading Questionnaire">Group</div>
+
+</div>
+<!--header content ends-->
+<!--Admin Details Starts here-->
+<div class="container-fuild" id="slctDisNGrp">
+    <div class="row" id="qtnRow">
+        <div class="col">
+            <font face="Segoe UI" style="float:left">Admin Details</font>
+        </div>
+    </div>
+    <div class="row" id="qtnRow">
+        <div class="col-md-4">
+            <!--     <md-input-container class="example-full-width">
+                <input mdInput placeholder="First name">
+            </md-input-container>-->
+            <label>Admin First Name</label>
+        </div>
+        <div class="col-md-4">
+
+            <!--  <md-input-container class="example-full-width">
+                <input mdInput placeholder="Last Name">
+            </md-input-container>-->
+            <label>Admin Last Name</label>
+
+        </div>
+        <div class="col-md-4">
+
+
+            <!--    <md-input-container class="example-full-width">
+                <input mdInput type="tel" placeholder="Mobile Number" maxlength="10">
+            </md-input-container>
+-->
+            <label>Admin Mobile Number</label>
+        </div>
+
+    </div>
+</div>
+<!--Admin details ends here-->
+<!--member details starts here-->
+<div class="container-fuild" id="qtnEntryParentContainer">
+    <div class="row" id="qtnRow">
+
+        <font face="Segoe UI" style="float:left">List of groups</font>
+        <button md-button id="saveQtnnaire" routerLink="../groupCreation"> Add</button>
+    </div>
+
+    <hr>
+    <div class="container-fuild" id="qtnEntryGrp">
+        <md-list>
+
+            <!-- <md-list-item *ngFor="let group of groups">
+
+
+                <p md-line> {{group.groupName}} </p>
+                <span class="glyphicon glyphicon-user grpIcon"></span>
+                <span class="glyphicon glyphicon-pencil"></span>
+                <span class="glyphicon glyphicon-trash"></span>
+            </md-list-item>-->
+            <md-list>
+                <md-list-item>
+                    <p md-line> Item 1</p> <span class="glyphicon glyphicon-user grpIcon"></span>
+                    <span class="glyphicon glyphicon-pencil grpIcon"></span>
+                    <span class="glyphicon glyphicon-trash grpIcon"></span></md-list-item>
+                <md-list-item>
+                    <p md-line> Item 2</p> <span class="glyphicon glyphicon-user grpIcon"></span>
+                    <span class="glyphicon glyphicon-pencil grpIcon"></span>
+                    <span class="glyphicon glyphicon-trash grpIcon"></span></md-list-item>
+                <md-list-item>
+                    <p md-line> Item 3</p> <span class="glyphicon glyphicon-user grpIcon"></span>
+                    <span class="glyphicon glyphicon-pencil grpIcon"></span>
+                    <span class="glyphicon glyphicon-trash grpIcon"></span></md-list-item>
+            </md-list>
+
+
+        </md-list>
+    </div>
+
+    <!--member details ends here-->
+
+</div>

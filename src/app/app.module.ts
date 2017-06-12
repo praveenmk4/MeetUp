@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
 
@@ -30,6 +30,8 @@ import { CreateGroupComponent } from './create-group/create-group.component';
 //services List
 import{GroupsListService} from './groups-list.service';
 import{ParticipantsService} from './participants.service';
+import { UserAuthService } from  './user-auth.service';
+
 const ROUTES = [
    {
     path: '',component: LandingComponent,},
@@ -105,7 +107,7 @@ const childRoutes = [
      
       ],
 
-  providers: [ParticipantsService,GroupsListService],
+  providers: [ParticipantsService,GroupsListService,UserAuthService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

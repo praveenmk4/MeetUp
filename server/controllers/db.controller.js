@@ -1,10 +1,9 @@
-// declare axios for making http requests
 const user = require('../../src/models/User');
 const mongojs = require('mongojs');
 const mongoose = require('mongoose');
 const config = require('../../config');
 
-const db = mongoose.createConnection(config.database);
+
 
 
 exports.test = function(req, res) {
@@ -12,6 +11,7 @@ exports.test = function(req, res) {
 }
 
 exports.register = function(req, res) {
+	const db = mongoose.createConnection(config.database);
     var host = req.body.host;
     var newUser = new user({
         firstName: req.body.firstName,
@@ -43,9 +43,10 @@ exports.register = function(req, res) {
 
 //authenticate a user
 exports.login = function(req, res) {
+	const db = mongoose.createConnection(config.database);
+	console.log(req.body.email);
     user.findOne({
-        email: req.body.email,
-        'isActive': true
+        email: req.body.email
     }, function(err, user) {
         if (err) throw err;
         if (!user) {
@@ -74,6 +75,7 @@ exports.login = function(req, res) {
     });
 };
 exports.getUserByMobileNumber = function(req, res) {
+	const db = mongoose.createConnection(config.database);
     var phones = req.param('phone');
     console.log(phones);
     user.find({

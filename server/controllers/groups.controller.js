@@ -3,12 +3,12 @@ const mongojs = require('mongojs');
 const mongoose = require('mongoose');
 const config = require('../../config');
 
-const db = mongoose.connect(config.database);
+
 
 
 //create a group
 exports.createGroup = function(req, res) {
-
+    const db = mongoose.connect(config.database);
     var member = req.body.member;
     //adding the data to schema
     var newGroup = new group({
@@ -48,6 +48,7 @@ exports.createGroup = function(req, res) {
     });
 };
 exports.updateFieldInGroup = function(req, res) {
+    const db = mongoose.connect(config.database);
     /*    var qname = req.body.qname;
         var qvalue = req.body.qvalue;*/
     var phones = req.body.phones;
@@ -80,6 +81,7 @@ exports.updateFieldInGroup = function(req, res) {
 
 };
 exports.updateGroup = function(req, res) {
+    const db = mongoose.connect(config.database);
     //var phones = req.body.phones;
 
     var updateInfo = {
@@ -107,6 +109,7 @@ exports.updateGroup = function(req, res) {
 };
 
 exports.listOfGroups = function(req, res) {
+    const db = mongoose.connect(config.database);
     var phone = req.param('phone');
 
     group.find({ phone: phone }, function(err, result) {

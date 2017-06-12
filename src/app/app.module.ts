@@ -22,7 +22,7 @@ import { EventCreationComponent } from './event-creation/event-creation.componen
 
 import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
-import { GroupsComponent } from './groups/groups.component';
+import { GroupsComponent,DialogResultExampleDialog } from './groups/groups.component';
 import { RegisterComponent } from './register/register.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
 
@@ -53,7 +53,7 @@ const childRoutes = [
   {path:'home',
     component: HomeComponent,
      children: [
-        { path: '',
+              { path: '',
                 component: DashboardComponent},
               {
                 path:'dashboard',
@@ -102,6 +102,7 @@ const childRoutes = [
     MaterialModule,
 
      BrowserAnimationsModule
+     
       ],
 
   providers: [ParticipantsService,GroupsListService],

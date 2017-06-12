@@ -1,42 +1,47 @@
- label {
-     font-family: Segoe UI;
- }
- 
- .Questionnaire {
-     font-family: Segoe UI;
-     font-weight: Bold;
- }
- 
- #slctDisNGrp {
-     margin: 1%;
-     border: 0.1em solid gainsboro;
- }
- 
- #qtnEntryParentContainer {
-     margin: 1%;
-     border: 0.1em solid gainsboro;
- }
- 
- #qtnEntryGrp {
-     margin: 1%;
-     border: 0.1em solid gainsboro;
- }
- 
- #saveQtnnaire {
-     float: right;
-     background-color: #175a7b;
-     color: white;
-     font-family: Segoe UI;
- }
- 
- #qtnRow {
-     margin: 2%;
- }
- 
- #grpPanel {
-     background-color: #175a7b !important;
- }
- 
- .grpIcon {
-     margin: 1%;
- }
+div {
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+label {
+    font-family: Segoe UI;
+}
+
+.Questionnaire {
+    font-family: Segoe UI;
+    font-weight: Bold;
+}
+
+#slctDisNGrp {
+    margin: 0.5%;
+    border: 0.1em solid gainsboro;
+}
+
+#qtnEntryParentContainer {
+    margin: 1%;
+    border: 0.1em solid gainsboro;
+}
+
+#qtnEntryGrp {
+    margin: 1%;
+    border: 0.1em solid gainsboro;
+}
+
+#saveQtnnaire {
+    float: right;
+    background-color: #175a7b;
+    color: white;
+    font-family: Segoe UI;
+}
+
+#qtnRow {
+    margin: 2%;
+}
+
+#grpPanel {
+    background-color: #175a7b !important;
+}
+
+.grpIcon {
+    margin: 1%;
+}

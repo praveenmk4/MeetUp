@@ -51,15 +51,15 @@
     <div class="container-fuild" id="qtnEntryGrp">
         <md-list>
 
-            <!-- <md-list-item *ngFor="let group of groups">
+            <md-list-item *ngFor="let group of groups">
 
 
                 <p md-line> {{group.groupName}} </p>
-                <span class="glyphicon glyphicon-user grpIcon"></span>
-                <span class="glyphicon glyphicon-pencil"></span>
-                <span class="glyphicon glyphicon-trash"></span>
-            </md-list-item>-->
-            <md-list>
+                <span class="glyphicon glyphicon-user grpIcon" (click)="openDialog(group)"></span>
+                <span class="glyphicon glyphicon-pencil grpIcon"></span>
+                <span class="glyphicon glyphicon-trash grpIcon"></span>
+            </md-list-item>
+            <!--<md-list>
                 <md-list-item>
                     <p md-line> Item 1</p> <span class="glyphicon glyphicon-user grpIcon"></span>
                     <span class="glyphicon glyphicon-pencil grpIcon"></span>
@@ -72,7 +72,7 @@
                     <p md-line> Item 3</p> <span class="glyphicon glyphicon-user grpIcon"></span>
                     <span class="glyphicon glyphicon-pencil grpIcon"></span>
                     <span class="glyphicon glyphicon-trash grpIcon"></span></md-list-item>
-            </md-list>
+            </md-list>-->
 
 
         </md-list>

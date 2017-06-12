@@ -6,8 +6,8 @@ export class GroupsListService {
 
   constructor(private http:Http) { }
    // Get all posts from the API
-  getAllGroups() {
-    return this.http.get('/group/groupList')
+  getAllGroups(param) {
+    return this.http.get('/group/groupList?phone='+param)
       .map(res => res.json());
   }
 }

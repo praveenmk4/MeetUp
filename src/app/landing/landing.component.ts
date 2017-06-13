@@ -8,10 +8,11 @@ import {Router, RouterLink} from '@angular/router';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
-
-  constructor(  private router: Router) { }
-
+	
+  constructor(  private router: Router) {}
+	
   ngOnInit() {
+	  
   }
  
 

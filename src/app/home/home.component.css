@@ -58,6 +58,21 @@
         nav.sidebar a {
             padding-right: 13px;
         }
+		
+		nav.sidebar button{
+			position: relative;
+			display: inline-block;
+			padding: 10px 15px;
+			background: none;
+			border: 0;
+			color: #9d9d9d;
+		}
+		
+		.glyphicon-log-out{
+			padding:12px;
+			color: #9d9d9d;
+		}
+		
         /*adds border top to first nav box */
         nav.sidebar .navbar-nav>li:first-child {
             border-top: 1px #e5e5e5 solid;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from '../user-auth.service';
-import { User } from '../user';
+import { CoolSessionStorage } from 'angular2-cool-storage';
+import {Router, RouterLink} from '@angular/router';
 
 
 @Component({
@@ -12,18 +13,30 @@ export class LoginComponent implements OnInit {
 	
   errorMessage: string;
   mode = 'Observable';
-  user = new User('','','','','',0,true);
-  constructor(private userAuthService: UserAuthService ) { }
+  user: any = {};
+  submitted = false;
+  sessionStorage: CoolSessionStorage;
+  
+  
+  constructor(private userAuthService: UserAuthService,
+			  public router: Router,
+			  sessionStorage: CoolSessionStorage  ) { 
+			  this.sessionStorage = sessionStorage;
+			  }
 
   ngOnInit() {
   }
   
-  submitted = false;
-  
   onSubmit() { 
   this.userAuthService.authenticateUser(this.user)
                      .subscribe(
-                       user => this.user = user,
+                       user => {
+						  this.user = user;
+						  this.sessionStorage.setItem("user",JSON.stringify(this.user.obj));
+                          if ( this.user.success ) {
+                            this.router.navigate(['home']);
+                          }
+					   },
                        error =>  this.errorMessage = <any>error);
   
   console.log(this.user);

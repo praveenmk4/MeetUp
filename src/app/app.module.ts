@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
+import { CoolStorageModule } from 'angular2-cool-storage';
 
 import {RouterModule,Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -102,6 +103,7 @@ const childRoutes = [
      RouterModule.forRoot(ROUTES),
      RouterModule.forChild(childRoutes),
     MaterialModule,
+	CoolStorageModule,
 
      BrowserAnimationsModule
      

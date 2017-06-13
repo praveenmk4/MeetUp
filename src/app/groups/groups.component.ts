@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import{ GroupsListService} from '../groups-list.service';
 import {MdDialog, MdDialogRef} from '@angular/material';
+import { CoolSessionStorage } from 'angular2-cool-storage';
+
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.component.html',
@@ -9,7 +11,12 @@ import {MdDialog, MdDialogRef} from '@angular/material';
 export class GroupsComponent implements OnInit {
   groups: any = []; 
   mobile:number =  12354466;
-  constructor(private groupService: GroupsListService,public dialog: MdDialog) { }
+  user: any = {};
+  sessionStorage: CoolSessionStorage;
+  
+  
+  constructor(private groupService: GroupsListService,public dialog: MdDialog, sessionStorage: CoolSessionStorage) { 
+  this.sessionStorage = sessionStorage;   }
 
   ngOnInit() {
       // Retrieve posts from the API
@@ -18,6 +25,13 @@ export class GroupsComponent implements OnInit {
     
       JSON.stringify(this.groups);
     });
+	
+	let loggedUser = this.sessionStorage.getItem('user');
+	  if (loggedUser) {
+		this.user = JSON.parse(loggedUser);
+	  } else {
+		  this.user = null;
+	  }
     
   }
 

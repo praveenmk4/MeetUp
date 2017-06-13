@@ -3,15 +3,12 @@ const mongojs = require('mongojs');
 const mongoose = require('mongoose');
 const config = require('../../config');
 
-
-
-
 exports.test = function(req, res) {
     res.send('this is a test urlS');
 }
 
 exports.register = function(req, res) {
-	const db = mongoose.createConnection(config.database);
+	const db = mongoose.connect(config.database);
     var host = req.body.host;
     var newUser = new user({
         firstName: req.body.firstName,
@@ -43,10 +40,10 @@ exports.register = function(req, res) {
 
 //authenticate a user
 exports.login = function(req, res) {
-	const db = mongoose.createConnection(config.database);
-	console.log(req.body.email);
+	const db = mongoose.connect(config.database);
+	console.log(req.body.user.email);
     user.findOne({
-        email: req.body.email
+        email: req.body.user.email
     }, function(err, user) {
         if (err) throw err;
         if (!user) {
@@ -56,7 +53,7 @@ exports.login = function(req, res) {
             // check if password matches
             console.log(user);
             console.log(user.email);
-            if (user.password != req.body.password) {
+            if (user.password != req.body.user.password) {
                 res.json({ success: false, message: 'Authentication failed! invalid username and password' });
             } else {
 
@@ -75,7 +72,7 @@ exports.login = function(req, res) {
     });
 };
 exports.getUserByMobileNumber = function(req, res) {
-	const db = mongoose.createConnection(config.database);
+	const db = mongoose.connect(config.database);
     var phones = req.param('phone');
     console.log(phones);
     user.find({

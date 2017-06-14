@@ -8,7 +8,7 @@ exports.test = function(req, res) {
 }
 
 exports.register = function(req, res) {
-	const db = mongoose.connect(config.database);
+    const db = mongoose.connect(config.database);
     var host = req.body.host;
     var newUser = new user({
         firstName: req.body.firstName,
@@ -40,8 +40,8 @@ exports.register = function(req, res) {
 
 //authenticate a user
 exports.login = function(req, res) {
-	const db = mongoose.connect(config.database);
-	console.log(req.body.user.email);
+    const db = mongoose.connect(config.database);
+    console.log(req.body.user.email);
     user.findOne({
         email: req.body.user.email
     }, function(err, user) {
@@ -72,7 +72,7 @@ exports.login = function(req, res) {
     });
 };
 exports.getUserByMobileNumber = function(req, res) {
-	const db = mongoose.connect(config.database);
+    const db = mongoose.connect(config.database);
     var phones = req.param('phone');
     console.log(phones);
     user.find({

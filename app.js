@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 const mongojs = require('mongojs');
 const mongoose = require('mongoose');
 const config = require('./config');
-
+const promise = require('bluebird');
+const MongoClient = require('mongodb');
+const logger = require('winston');
 
 // Get our API routes
 const api = require('./server/routes/api');
@@ -35,6 +37,20 @@ app.use('/group', group);
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
+
+//Mongodb conncetion through mongoClient
+// Create a MongoDB connection pool and start the application
+// after the database connection is ready
+MongoClient.connect('mongodb://admin:meetupadmin@ds157621.mlab.com:57621/meetup', { promiseLibrary: Promise }, (err, db) => {
+    if (err) {
+        logger.warn(`Failed to connect to the database. ${err.stack}`);
+    }
+    app.locals.db = db;
+    /* app.listen(config.port, () => {
+         logger.info(`Node.js app is listening at Mongo Labs`);
+     });*/
 });
 
 /**
